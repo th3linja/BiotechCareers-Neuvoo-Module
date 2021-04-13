@@ -1,0 +1,8 @@
+neuvoo_style:
+	version: 1.x
+	css:
+		css/neuvoo.css: {}
+	js:
+		js/neuvoo.js: {}
+  	dependencies:
+    	- core/jquery

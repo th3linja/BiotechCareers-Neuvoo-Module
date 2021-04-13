@@ -1,0 +1,76 @@
+
+#job-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap: 2rem;
+}
+
+.neuvoo_job_container {
+	justify-content: center;
+	align-items: center;
+	word-wrap: break-word;
+}
+
+.neuvoo_job_card{
+	transition: all 0.5s;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	border-radius: 20px;
+	padding: 2rem 3rem;
+	box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2), 0px 0px 10px;
+}
+
+.neuvoo_job_card:hover{
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2), 0px 0px 20px;
+}
+
+.neuvoo_job{background: #eee; border: 1px solid transparent;}
+
+
+.neuvoo_jobtitle {
+	font-family: "Poppins", sans-serif;
+	font-size: 2rem;
+	font-weight: bold;
+	display: flex;
+	align-items: left;
+	transition: all 0.75s ease-out;
+}
+
+.neuvoo_job_company {
+	transition: all 0.75s ease-out;
+    color: #006621;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    margin-top: 3px;
+}
+.neuvoo_job_location {
+	transition: all 0.75s ease-out;
+    color: #006621;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    margin-top: 3px;
+}
+
+.neuvoo_job_company, .neuvoo_job_location {display: inline;}
+
+.neuvoo_job_date {
+	transition: all 0.75s ease-out;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 3px;
+    line-height: 18px;
+}
+.neuvoo_job_description{
+	transition: all 0.75s ease-out;
+    color: #676767;
+    line-height: 18px;
+    overflow: hidden;
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+.neuvoo_job_url{transition: all 0.75s ease-out;}

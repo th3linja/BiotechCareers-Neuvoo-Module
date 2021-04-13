@@ -1,0 +1,82 @@
+<?php
+/** 
+ * @file
+ * Test.
+ */
+
+ /**
+  * Implements hook_menu().
+  */
+
+  function neuvoo_menu(){
+    $items = array();
+
+    $items['neuvoo'] = array(
+      'title' => 'neuvoo',
+      'access callback' => TRUE,
+      'page callback' => 'neuvoo_custom_page',
+      'type' => MENU_NORMAL_ITEM,
+      'menu' => 'navigation',
+      'file' => 'neuvoo.module',
+    );
+    
+    return $items;
+  }
+
+  /**
+  * Page callback for test.
+  */
+  
+  function neuvoo_custom_page(){
+    drupal_add_css(drupal_get_path('module', 'Neuvoo') . '/neuvoo.css');
+    drupal_add_js(drupal_get_path('module', 'Neuvoo') . '/neuvoo.js');
+    return 'Loading page content...';
+    //$page['#attached']['libraries'][] = array('test', 'test_js');
+    //$form['#attached']['js'] = array(
+    //return $page;
+    //)
+  }
+
+  /**
+  * Test
+  */
+  function neuvoo_block_info(){
+    $blocks['neuvoo'] = array(
+      'info' => t('Get Jobs'),
+    );
+    return $blocks;
+  }
+
+  function neuvoo_block_view($delta = ''){
+    //drupal_add_js(drupal_get_path('module', 'Neuvoo') . '/neuvoo.js'); 
+    $block = array();
+
+    switch($delta) {
+      case 'neuvoo':
+      $block['subject'] = t('This is a test');
+      //$block['content'] = "<a href=\"\">Something</a>";
+      drupal_add_css(drupal_get_path('module', 'Neuvoo') . '/neuvoo.css');
+      drupal_add_js(drupal_get_path('module', 'Neuvoo') . '/neuvoo.js');
+      break;
+    }
+    return $block;
+  }
+
+  function neuvoo_current_path() {
+    return $_GET['q'];
+  }
+
+
+  function hook_install() {
+
+    // Create the styles directory and ensure it's writable.
+    $directory = file_default_scheme() . '://styles';
+    $mode = isset($GLOBALS['install_state']['mode']) ? $GLOBALS['install_state']['mode'] : NULL;
+    file_prepare_directory($directory, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS, $mode);
+  }
+
+  function hook_uninstall() {
+
+    // Remove the styles directory and generated images.
+    file_unmanaged_delete_recursive(file_default_scheme() . '://styles');
+  }

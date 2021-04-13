@@ -1,0 +1,7 @@
+name = Neuvoo vBeta0.1
+description = Neuvoo job module for Biotech-Careers (vBeta0.1)
+package = Custom
+core = 7.x
+
+libraries:
+	-neuvoo/neuvoo_style
