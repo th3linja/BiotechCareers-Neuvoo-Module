@@ -124,7 +124,7 @@ function parseNuvooXML(xmlDoc){
 									txt += "<div class=\"neuvoo_jobtitle\">" + result[i].childNodes[j].childNodes[k].childNodes[0].nodeValue + "</div>";
 									break;
 								case 'company':
-									txt += "<div class=\"neuvoo_job_company\">" + result[i].childNodes[j].childNodes[k].childNodes[0].nodeValue + "</div>";
+									txt += "<div class=\"neuvoo_job_company\">" + result[i].childNodes[j].childNodes[k].childNodes[0].nodeValue + " - " + "</div>";
 									break;
 								case 'city':
 									location += "<div class=\"neuvoo_job_location\">" + result[i].childNodes[j].childNodes[k].childNodes[0].nodeValue + ", ";
