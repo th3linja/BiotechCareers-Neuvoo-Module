@@ -4,7 +4,7 @@ Drupal 7 module for Biotech Careers that uses Neuvoo API for job search queries.
 ## Getting Started
 The purpose of this project is to create a custom Drupal 7 module to utilizes a third party API that handles job search queries.
 
-## Prequisites
+## Prerequisites
   * Drupal 7
   
 ## Installing
